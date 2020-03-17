@@ -1,14 +1,30 @@
 package kz.muminov.employee.entity;
 
-public class Employee {
-    protected Long id;
-    protected String name;
-    protected int age;
+import javax.persistence.*;
 
-    public Employee(Long id, String name, int age) {
-        this.id = id;
+@Entity
+@Table(name = "employees")
+public class Employee {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private double fixedSalary;
+    private double hourRate;
+    private int hoursWorked;
+    private float commRate;
+
+    @Enumerated(EnumType.STRING)
+    private EmployeeType emplType;
+
+    public Employee(String name, double fixedSalary, double hourRate, int hoursWorked, float commRate, EmployeeType emplType) {
         this.name = name;
-        this.age = age;
+        this.fixedSalary = fixedSalary;
+        this.hourRate = hourRate;
+        this.hoursWorked = hoursWorked;
+        this.commRate = commRate;
+        this.emplType = emplType;
     }
 
     public Employee() {
@@ -30,21 +46,43 @@ public class Employee {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
+    public double getFixedSalary() {
+        return fixedSalary;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setFixedSalary(double fixedSalary) {
+        this.fixedSalary = fixedSalary;
     }
 
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                '}';
+    public double getHourRate() {
+        return hourRate;
     }
 
+    public void setHourRate(double hourRate) {
+        this.hourRate = hourRate;
+    }
+
+    public int getHoursWorked() {
+        return hoursWorked;
+    }
+
+    public void setHoursWorked(int hoursWorked) {
+        this.hoursWorked = hoursWorked;
+    }
+
+    public float getCommRate() {
+        return commRate;
+    }
+
+    public void setCommRate(float commRate) {
+        this.commRate = commRate;
+    }
+
+    public EmployeeType getEmplType() {
+        return emplType;
+    }
+
+    public void setEmplType(EmployeeType emplType) {
+        this.emplType = emplType;
+    }
 }

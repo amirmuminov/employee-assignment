@@ -1,6 +1,6 @@
-package kz.muminov.employee.motification.handler;
+package kz.muminov.employee.notification.handler;
 
-import kz.muminov.employee.motification.event.SalariedCommissionEmployeeSalaryIncreaseEvent;
+import kz.muminov.employee.notification.event.SalariedCommissionEmployeeSalaryIncreaseEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 

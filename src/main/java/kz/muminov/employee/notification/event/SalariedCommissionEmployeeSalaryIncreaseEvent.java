@@ -1,4 +1,4 @@
-package kz.muminov.employee.motification.event;
+package kz.muminov.employee.notification.event;
 
 import org.springframework.context.ApplicationEvent;
 
